@@ -2,7 +2,7 @@
 
 | Functionality     | Status | Help |
 |-------------------|--------|------|
-| Controller usage  | <i class="fa-solid fa-circle-check"></i> | Help |
+| Controller usage  | <mat-icon>content_copy</mat-icon> | Help |
 | Repository usage  | Status | Help |
 | Middleware usage  | Status | Help |
 | Interceptor usage | Status | Help |
