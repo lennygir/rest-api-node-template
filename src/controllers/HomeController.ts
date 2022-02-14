@@ -1,7 +1,9 @@
-import { Controller, Param, Body, Get, Post, Put, Delete, All } from 'routing-controllers';
+import { Controller, All } from 'routing-controllers';
+import { Service } from 'typedi';
 import environment from '../environment';
 
 @Controller()
+@Service()
 export class HomeController {
     @All('/')
     public home(): string {
