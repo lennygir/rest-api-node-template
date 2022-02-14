@@ -1,11 +1,13 @@
 import 'reflect-metadata';
 import { createExpressServer } from 'routing-controllers';
-import { UserController } from './UserController';
 
-// creates express app, registers all controller routes and returns you express app instance
+import environment from './environment';
+import path from 'path';
+
 const app = createExpressServer({
-  controllers: [UserController], // we specify controllers we want to use
+  controllers: [path.join(__dirname, '/controllers/**/*.ts')],
+  middlewares: [path.join(__dirname, '/middlewares/**/*.ts')],
+  interceptors: [path.join(__dirname, '/interceptors/**/*.ts')]
 });
 
-// run express application on port 3000
-app.listen(3000);
+app.listen(environment.port);
