@@ -2,7 +2,7 @@
 
 | Functionality     | Status | Help |
 |-------------------|--------|------|
-| Controller usage  | <mat-icon>content_copy</mat-icon> | Help |
+| Controller usage  | :star: | Help |
 | Repository usage  | Status | Help |
 | Middleware usage  | Status | Help |
 | Interceptor usage | Status | Help |
