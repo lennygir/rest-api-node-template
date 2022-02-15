@@ -21,4 +21,4 @@
 | Unit testing      | :white_check_mark:    | [Jest unit tests](https://jestjs.io/fr/)      | ```npm run test(-fix)```  |
 | Syntax checker    | :white_check_mark:    | [TSlint](https://palantir.github.io/tslint/)  | ```npm run test(-fix)```  |
 | Data typing       | :white_check_mark:    | [Typescript](https://www.typescriptlang.org/) |                           |
-| API Documentation | :x:                   | Maybe soon...                                 |                           |
+| API Documentation | :white_check_mark:    | [Swagger](https://swagger.io/)                | Default path : ```/docs```|

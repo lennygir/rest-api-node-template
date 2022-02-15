@@ -1,5 +1,6 @@
 export default {
-    appName: 'Test',
-    version: '1.0.0',
+    appName: '',
+    version: '',
+    documentationPath: '/docs',
     port: 3000
 }
