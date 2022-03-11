@@ -22,3 +22,9 @@
 | Syntax checker    | :white_check_mark:    | [TSlint](https://palantir.github.io/tslint/)  | ```npm run test(-fix)```  |
 | Data typing       | :white_check_mark:    | [Typescript](https://www.typescriptlang.org/) |                           |
 | API Documentation | :white_check_mark:    | [Swagger](https://swagger.io/)                | Default path : ```/docs```|
+
+## Tools
+[![Scaffolding tool](https://ondemand.bannerbear.com/signedurl/D0nJ4XLedwbENRZa1x/image.jpg?modifications=W3sibmFtZSI6InJlcG8iLCJ0ZXh0IjoibGVubnlnaXIgLyAqcmVzdC1hcGktbm9kZS10ZW1wbGF0ZSoifSx7Im5hbWUiOiJkZXNjIiwidGV4dCI6Im5vZGVKUyBBUEkgdGVtcGxhdGUgd2l0aCBxdWFsaXR5IHRvb2xzIn0seyJuYW1lIjoiYXZhdGFyNSIsImhpZGUiOnRydWV9LHsibmFtZSI6ImF2YXRhcjQiLCJoaWRlIjp0cnVlfSx7Im5hbWUiOiJhdmF0YXIzIiwiaGlkZSI6dHJ1ZX0seyJuYW1lIjoiYXZhdGFyMiIsImhpZGUiOnRydWV9LHsibmFtZSI6ImF2YXRhcjEiLCJpbWFnZV91cmwiOiJodHRwczovL2F2YXRhcnMuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3UvNTA0MDgxMzk_dj00In0seyJuYW1lIjoiY29udHJpYnV0b3JzIiwidGV4dCI6Imxlbm55Z2lyIn0seyJuYW1lIjoic3RhcnMiLCJ0ZXh0IjoiMiJ9XQ&s=bbfda10c418705b90c4485880fbefe24c9d7b23a7bd62c30086cabf8d3c3e8d1)](https://github.com/lennygir/leg-scaffolding)
+<p align="center">
+  Scaffolding tool
+</p>
