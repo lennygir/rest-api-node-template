@@ -37,9 +37,9 @@ export class HomeController {
     @Post('/register')
     public register(@Body() user: User): Promise<User> {
         return this.authRepository.create(user);
-     }
+    }
 
-     /**
+    /**
      * @swagger
      * /auth/verify:
      *   post:
