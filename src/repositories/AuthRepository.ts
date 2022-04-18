@@ -1,13 +1,17 @@
-import { CredentialDTO } from "../shared/dto/Credential.model";
+import { Credential } from "../shared/dto/Credential.model";
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { Service } from "typedi";
 import environment from "../environment";
+import GenericRepository from "./GenericRepository";
+import { User } from "../shared/dto/User.model";
 
 @Service()
-export class AuthRepository {
-    constructor() { }
+export default class AuthRepository extends GenericRepository<User> {
+    constructor() {
+        super("user");
+    }
 
-    public login(credential: CredentialDTO): string {
+    public login(credential: Credential): string {
         // Check if user is in the database
         const user = { username: 'just_testing' };
 

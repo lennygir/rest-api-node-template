@@ -4,6 +4,7 @@ import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerDefinition = {
     openapi: '3.0.0',
+    basePath: './',
     info: {
         title: environment.appName + ' API documentation',
         version: environment.version,
