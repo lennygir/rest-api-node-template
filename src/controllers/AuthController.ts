@@ -1,8 +1,9 @@
-import { Body, BodyParam, Controller, Post } from 'routing-controllers';
+import { Body, BodyParam, Controller, OnNull, Post } from 'routing-controllers';
 import AuthRepository from '../repositories/AuthRepository';
 import { Service } from 'typedi';
 import { JwtPayload } from 'jsonwebtoken';
 import { User } from '../shared/dto/User.model';
+import { Credential } from '../shared/dto/Credential.model';
 
 @Controller('/auth')
 @Service()
@@ -17,9 +18,10 @@ export class HomeController {
      *     summary: login to API
      *     description: Return a jwt token if given credentials are correct
      */
+    @OnNull(401)
     @Post('/login')
-    public login(): string {
-        return this.authRepository.login({login: '', password: ''});
+    public login(@Body() credentials: Credential): Promise<string> {
+        return this.authRepository.login(credentials);
     }
 
     /**

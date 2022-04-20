@@ -50,9 +50,27 @@ export default abstract class GenericRepository<T extends {id?: number}> {
                 name: 'createGenericRepository',
                 text: `INSERT INTO ${environment.db_table_suffix}_${this.tableName}(${columns}) VALUES ($${values}) RETURNING *`,
                 values: Object.values(entity)
-              });
+            });
             client.release();
             return res.rows.map(item => this.unbindColumns(item, unbindedColumnsFunction))[0];
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async where(columns: string[], values: any[], unbindedColumnsFunction?: string[]): Promise<T[]> {
+        try {
+            const client = await db.connect();
+
+            const conditions = columns.map((item, index) => item + ' = $' + (index+1)).join(' AND ');
+
+            const res = await client.query<T>({
+                name: 'whereGenericRepository',
+                text: `SELECT * FROM ${environment.db_table_suffix}_${this.tableName} WHERE ${conditions}`,
+                values
+            });
+            client.release();
+            return res.rows.map(item => this.unbindColumns(item, unbindedColumnsFunction));
         } catch (error) {
             console.log(error);
         }

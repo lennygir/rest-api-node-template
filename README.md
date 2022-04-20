@@ -28,3 +28,35 @@
 <p align="center">
   Scaffolding tool
 </p>
+
+## Required
+
+> ( ) : Optional
+>
+> UQ : Unique
+>
+> PK : Primary Key
+>
+> FK : Foreign Key
+
+- required database schema to use jwt login system
+
+| Table     | Column                | Type                                          |
+|-------------------|-----------------------|-----------------------------------------------|
+| \[db_table_suffix]_user      | id    | serial, PK      |
+|    | username    | character varying, (UQ)  |
+|     | password    | character varying |
+
+- required database schema to use jwt login system tests
+
+| Table     | Column                | Type                                          |
+|-------------------|-----------------------|-----------------------------------------------|
+| \[db_table_suffix]_test      | id    | serial, PK      |
+|    | name    | character varying  |
+
+## Upcomming changes
+
+- TSLint & StyleLint configuration
+- Test(s) for "where" method of GenericRepository
+- E-mail Repository & implementation of 2-factor login
+- Particular need ? Ask in the "problem" section of github 

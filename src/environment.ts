@@ -10,6 +10,8 @@ export default {
     jwt_secret: 'MyApiIsFullySecure',
     jwt_expiresIn: '2d',
 
+    pwd_salt: 15,
+
     // Database
     db_user: 'postgres',
     db_password: 'postgres',
