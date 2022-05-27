@@ -58,5 +58,6 @@
 
 - TSLint & StyleLint configuration
 - Test(s) for "where" method of GenericRepository
+- Handle secrets with Jenkins
 - E-mail Repository & implementation of 2-factor login
 - Particular need ? Ask in the "problem" section of github 

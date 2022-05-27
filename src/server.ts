@@ -21,9 +21,9 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 // Create a new routing-controller instance
 const app = useExpressServer(server, {
-  controllers: [path.join(__dirname, '/controllers/**/*.ts')],
-  middlewares: [path.join(__dirname, '/middlewares/**/*.ts')],
-  interceptors: [path.join(__dirname, '/interceptors/**/*.ts')]
+  controllers: [path.join(__dirname, '/controllers/**/*')],
+  middlewares: [path.join(__dirname, '/middlewares/**/*')],
+  interceptors: [path.join(__dirname, '/interceptors/**/*')]
 });
 
 // Swagger configuration
