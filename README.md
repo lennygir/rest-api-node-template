@@ -43,7 +43,7 @@
 
 | Table     | Column                | Type                                          |
 |-------------------|-----------------------|-----------------------------------------------|
-| \[db_table_suffix]_user      | id    | serial, PK      |
+| \[db_table_prefix]_user      | id    | serial, PK      |
 |    | username    | character varying, (UQ)  |
 |     | password    | character varying |
 
@@ -51,7 +51,7 @@
 
 | Table     | Column                | Type                                          |
 |-------------------|-----------------------|-----------------------------------------------|
-| \[db_table_suffix]_test      | id    | serial, PK      |
+| \[db_table_prefix]_test      | id    | serial, PK      |
 |    | name    | character varying  |
 
 ## Upcomming changes

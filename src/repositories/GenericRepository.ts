@@ -15,7 +15,7 @@ export default abstract class GenericRepository<T extends {id?: number}> {
     async getAll(unbindedColumnsFunction?: string[]): Promise<T[]> {
         try {
             const client = await db.connect();
-            const res = await client.query<T>(`SELECT * FROM ${environment.db_table_suffix}_${this.tableName}`);
+            const res = await client.query<T>(`SELECT * FROM ${environment.db_table_prefix}_${this.tableName}`);
             client.release();
             return res.rows.map(item => this.unbindColumns(item, unbindedColumnsFunction));
         } catch (error) {
@@ -28,7 +28,7 @@ export default abstract class GenericRepository<T extends {id?: number}> {
             const client = await db.connect();
             const res = await client.query<T>({
                 name: 'getByIdGenericRepository',
-                text: `SELECT * FROM ${environment.db_table_suffix}_${this.tableName} WHERE id = $1`,
+                text: `SELECT * FROM ${environment.db_table_prefix}_${this.tableName} WHERE id = $1`,
                 values: [id],
               });
             client.release();
@@ -48,7 +48,7 @@ export default abstract class GenericRepository<T extends {id?: number}> {
 
             const res = await client.query<T>({
                 name: 'createGenericRepository',
-                text: `INSERT INTO ${environment.db_table_suffix}_${this.tableName}(${columns}) VALUES ($${values}) RETURNING *`,
+                text: `INSERT INTO ${environment.db_table_prefix}_${this.tableName}(${columns}) VALUES ($${values}) RETURNING *`,
                 values: Object.values(entity)
             });
             client.release();
@@ -66,7 +66,7 @@ export default abstract class GenericRepository<T extends {id?: number}> {
 
             const res = await client.query<T>({
                 name: 'whereGenericRepository',
-                text: `SELECT * FROM ${environment.db_table_suffix}_${this.tableName} WHERE ${conditions}`,
+                text: `SELECT * FROM ${environment.db_table_prefix}_${this.tableName} WHERE ${conditions}`,
                 values
             });
             client.release();
@@ -86,7 +86,7 @@ export default abstract class GenericRepository<T extends {id?: number}> {
 
             const res = await client.query<T>({
                 name: 'updateGenericRepository',
-                text: `UPDATE ${environment.db_table_suffix}_${this.tableName} SET ${columns} WHERE id = $${Object.keys(entity).length + 1} RETURNING *`,
+                text: `UPDATE ${environment.db_table_prefix}_${this.tableName} SET ${columns} WHERE id = $${Object.keys(entity).length + 1} RETURNING *`,
                 values: Object.values(entity).concat(id)
             });
             client.release();
@@ -101,7 +101,7 @@ export default abstract class GenericRepository<T extends {id?: number}> {
             const client = await db.connect();
             const res = await client.query<T>({
                 name: 'deleteGenericRepository',
-                text: `DELETE FROM ${environment.db_table_suffix}_${this.tableName} WHERE id = $1 RETURNING *`,
+                text: `DELETE FROM ${environment.db_table_prefix}_${this.tableName} WHERE id = $1 RETURNING *`,
                 values: [id],
             });
             client.release();

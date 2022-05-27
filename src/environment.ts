@@ -18,5 +18,5 @@ export default {
     db_host: 'localhost',
     db_port: 5432,
     db_database: 'postgres',
-    db_table_suffix: "rant"
+    db_table_prefix: "rant"
 }

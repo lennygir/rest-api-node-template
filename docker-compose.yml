@@ -1,8 +1,10 @@
-version: '3.6'
+version: '3.8'
 services:
+
   web:
     build: .
-    command: npm run start
+    command: npm run prod
+    restart: always
     volumes:
       - .:/usr/app/
       - /usr/app/node_modules
@@ -10,9 +12,15 @@ services:
       - "3000:3000"
     depends_on:
       - postgres
+
   postgres:
     image: postgres:9.6.2-alpine
+    restart: always
+    ports: 
+      - "5432:5432"
+    volumes:
+      - f:/data/docker/postgresql/data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: rest-api
       POSTGRES_PASSWORD: postgres
